@@ -1,30 +1,126 @@
 export default function Projects() {
-  const placeholders = [
-    { title: "Project Alpha", desc: "Complex optimization system focusing on algorithmic efficiency and data structure refinement." },
-    { title: "Project Beta", desc: "Fullstack architecture implementation using modern React/Next.js and NoSQL real-time databases." },
-    { title: "Project Gamma", desc: "Automated infrastructure pipeline and cloud deployment strategies for scalable applications." },
-    { title: "Project Delta", desc: "Metaheuristic-driven scheduling engine designed for high-concurrency resource allocation." },
-    { title: "Project Epsilon", desc: "Real-time visualization dashboard for complex data streams using WebSocket and low-latency rendering." },
-    { title: "Project Zeta", desc: "Distributed API Gateway with intelligent load balancing and custom authentication middleware." }
+  const projects = [
+    // ... (mismos datos de antes)
+    {
+      title: "NanoLedger API",
+      desc: "A robust transactional engine based on the double-entry bookkeeping principle. Built to ensure financial integrity and full asset traceability.",
+      tech: ["Spring Boot", "PostgreSQL", "Java", "Docker"],
+      link: "https://nanoledgerapi-service-399040611256.us-central1.run.app/swagger-ui/index.html",
+      repo: "https://github.com/JehisonBustamante/nanoledger-api"
+    },
+    {
+      title: "Cryptowatch",
+      desc: "High-availability cryptocurrency dashboard for real-time market monitoring, integrating Binance's WebSocket API for live data streams.",
+      tech: ["Next.js", "WebSockets", "Binance API"],
+      link: "https://cryptowatch-lake.vercel.app",
+      repo: "https://github.com/JehisonBustamante/cryptowatch"
+    },
+    {
+      title: "EventHub Ecosystem",
+      desc: "Scalable event management platform featuring a decoupled architecture. High-performance backend paired with a minimalist, high-speed frontend.",
+      tech: ["Nest.js", "Next.js", "TypeORM", "Docker"],
+      link: "https://eventhub-frontend-sigma.vercel.app",
+      repo: "https://github.com/JehisonBustamante/eventhub-frontend"
+    },
+    {
+      title: "DevOps IaC Hub",
+      desc: "Infrastructure as Code (IaC) repository for automated microservices deployment on Google Cloud Run utilizing Terraform pipelines.",
+      tech: ["Terraform", "Docker", "GCP"],
+      link: null,
+      repo: "https://github.com/JehisonBustamante/devops-iac"
+    },
+    {
+      title: "Gateway Aggregator",
+      desc: "Intelligent dashboard centralizing weather, finance, and news microservices under a simplified UX and high-level digital design.",
+      tech: ["FastAPI", "Python", "SvelteKit", "Docker"],
+      link: "https://api-gateway-aggregator-frontend.vercel.app",
+      repo: "https://github.com/JehisonBustamante/api-gateway-aggregator-frontend"
+    },
+    {
+      title: "Digital Showroom",
+      desc: "Personal command center and technical portfolio designed to showcase the integration of distributed architectures and cloud deployments.",
+      tech: ["Next.js", "TypeScript", "Tailwind"],
+      link: "#",
+      repo: "https://github.com/JehisonBustamante/mi-portafolio"
+    }
   ];
 
   return (
-    <section id="projects-section" style={{ gridColumn: 'span 12', marginTop: '20px' }}>
+    <section id="projects-section" style={{ gridColumn: 'span 12', marginTop: '40px' }}>
       <h2 className="section-title">Featured Projects</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-        {placeholders.map((project, index) => (
-          <div key={index} className="glass-card" style={{ padding: '30px', display: 'flex', flexDirection: 'column', minHeight: '200px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+        {projects.map((project, index) => (
+          <div key={index} className="glass-card" style={{ padding: '35px', display: 'flex', flexDirection: 'column', minHeight: '320px', transition: 'transform 0.3s ease' }}>
+
+            {/* Header */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-              <h3 className="tech-text" style={{ fontSize: '1.2rem', color: 'var(--accent-neon-purple)' }}>{project.title}</h3>
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-neon-purple)', boxShadow: '0 0 10px var(--accent-neon-purple)' }}></div>
+              <h3 className="tech-text" style={{ fontSize: '1.3rem', color: 'var(--accent-neon-purple)', fontWeight: 'bold' }}>{project.title}</h3>
+              <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--accent-neon-purple)', boxShadow: '0 0 15px var(--accent-neon-purple)' }}></div>
             </div>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6', flex: 1 }}>
+
+            {/* Description */}
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7', flex: 1, marginBottom: '20px' }}>
               {project.desc}
             </p>
-            <div style={{ marginTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', display: 'flex', gap: '12px' }}>
-              <span className="skill-tag" style={{ fontSize: '0.75rem', opacity: 0.6 }}>[ Placeholder ]</span>
-              <span className="skill-tag" style={{ fontSize: '0.75rem', opacity: 0.6 }}>[ WIP ]</span>
+
+            {/* Tech Tags */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+              {project.tech.map((t, i) => (
+                <span key={i} className="skill-tag" style={{ fontSize: '0.7rem', padding: '4px 10px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: 'rgba(255,255,255,0.7)' }}>
+                  {t}
+                </span>
+              ))}
             </div>
+
+            {/* BOTONES MEJORADOS */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '20px', display: 'flex', gap: '12px' }}>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    flex: 1,
+                    textAlign: 'center',
+                    fontSize: '0.75rem',
+                    padding: '10px 0',
+                    background: 'rgba(168, 85, 247, 0.15)', // Fondo sutil púrpura
+                    color: 'var(--accent-neon-purple)',
+                    border: '1px solid var(--accent-neon-purple)',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: '900',
+                    letterSpacing: '1px',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 0 10px rgba(168, 85, 247, 0.1)'
+                  }}
+                  className="hover-bright" // Asumiendo que tienes una clase de hover o puedes agregarla
+                >
+                  LIVE DEMO
+                </a>
+              )}
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  flex: 1,
+                  textAlign: 'center',
+                  fontSize: '0.75rem',
+                  padding: '10px 0',
+                  background: 'rgba(255,255,255,0.05)',
+                  color: 'rgba(255,255,255,0.6)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  fontWeight: '600',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                GITHUB
+              </a>
+            </div>
+
           </div>
         ))}
       </div>
