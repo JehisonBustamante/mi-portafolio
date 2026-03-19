@@ -1,6 +1,6 @@
 export default function Experience() {
   return (
-    <section id="projects" className="glass-card" style={{ gridColumn: 'span 7', padding: '40px' }}>
+    <section id="projects" className="glass-card col-span-7 responsive-card-padding">
       <h2 className="section-title">Professional Experience</h2>
       
       <div style={{ marginBottom: '40px' }}>

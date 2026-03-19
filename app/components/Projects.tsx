@@ -46,11 +46,11 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects-section" style={{ gridColumn: 'span 12', marginTop: '40px' }}>
+    <section id="projects-section" className="col-span-12 responsive-section-margin">
       <h2 className="section-title">Featured Projects</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '20px' }}>
         {projects.map((project, index) => (
-          <div key={index} className="glass-card" style={{ padding: '35px', display: 'flex', flexDirection: 'column', minHeight: '320px', transition: 'transform 0.3s ease' }}>
+          <div key={index} className="glass-card responsive-card-padding" style={{ display: 'flex', flexDirection: 'column', minHeight: '320px', transition: 'transform 0.3s ease' }}>
 
             {/* Header */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>

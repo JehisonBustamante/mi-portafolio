@@ -4,6 +4,7 @@ import Experience from './components/Experience';
 import DeepTech from './components/DeepTech';
 import DevOpsGrid from './components/DevOpsGrid';
 import SkillMatrix from './components/SkillMatrix';
+import Languages from './components/Languages';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <SkillMatrix />
       <DeepTech />
       <DevOpsGrid />
+      <Languages />
       <Footer />
     </main>
   );

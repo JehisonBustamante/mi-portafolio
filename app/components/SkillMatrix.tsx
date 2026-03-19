@@ -7,7 +7,7 @@ export default function SkillMatrix() {
   ];
 
   return (
-    <section className="glass-card" style={{ gridColumn: 'span 5', padding: '40px' }}>
+    <section className="glass-card col-span-5 responsive-card-padding">
       <h2 className="section-title">Technical Matrix</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '24px' }}>
