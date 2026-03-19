@@ -40,7 +40,7 @@ export default function Projects() {
       title: "Digital Showroom",
       desc: "Personal command center and technical portfolio designed to showcase the integration of distributed architectures and cloud deployments.",
       tech: ["Next.js", "TypeScript", "Tailwind"],
-      link: "#",
+      link: null,
       repo: "https://github.com/JehisonBustamante/mi-portafolio"
     }
   ];
