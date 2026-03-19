@@ -9,12 +9,15 @@ export default function DevOpsGrid() {
     { name: "Jira", category: "Mgmt" },
     { name: "GitHub Desktop", category: "VCS" },
     { name: "DBeaver", category: "DB Client" },
+    { name: "Cloud Run", category: "Cloud" },
+    { name: "Vercel", category: "Cloud" },
+    { name: "GCP", category: "Cloud" },
   ];
 
   return (
     <section className="glass-card" style={{ gridColumn: 'span 6', padding: '40px' }}>
       <h2 className="section-title">Infrastructure & DevOps</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginTop: '24px' }}>
         {tools.map((tool, idx) => (
           <div key={idx} className="devops-card">

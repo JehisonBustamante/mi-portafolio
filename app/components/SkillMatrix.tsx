@@ -1,15 +1,15 @@
 export default function SkillMatrix() {
   const skills = [
     { category: "Languages", items: ["Python", "Java", "C++", "TypeScript", "Assembler MIPS", "R", "Matlab", "Julia"] },
-    { category: "Frontend Core", items: ["Next.js", "React", "Vanilla CSS", "HTML5"] },
-    { category: "Backend & Data", items: ["Node.js", "Firebase", "NoSQL", "SQL"] },
-    { category: "Tools & Design", items: ["v0", "Figma", "Overleaf", "Lucidchart", "Bizagi"] },
+    { category: "Frontend Core", items: ["Next.js", "React", "Vanilla CSS", "HTML5", "SvelteKit"] },
+    { category: "Backend & Data", items: ["Node.js", "Nest.js", "FastAPI", "Spring Boot", "TypeORM", "WebSockets", "Firebase", "NoSQL", "SQL"] },
+    { category: "Tools & Design", items: ["v0", "Figma", "Overleaf", "Lucidchart", "Bizagi", "Terraform", "Docker", "Postman", "Swagger"] },
   ];
 
   return (
     <section className="glass-card" style={{ gridColumn: 'span 5', padding: '40px' }}>
       <h2 className="section-title">Technical Matrix</h2>
-      
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '24px' }}>
         {skills.map((skillGroup, index) => (
           <div key={index}>
